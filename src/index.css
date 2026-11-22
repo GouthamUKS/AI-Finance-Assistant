@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+:root {
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #25332c;
+  background: #f6f8f4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; background: #f6f8f4; color: #25332c; }
+
+button, input { font: inherit; }
+
+/* step entrance animation */
+@keyframes stepIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.step-enter { animation: stepIn 0.22s ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  .step-enter { animation: none; }
+}
+
+/* remove number spinners */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
+input[type=number] { -moz-appearance: textfield; }
+
+/* custom scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cdd6cb; border-radius: 3px; }
